@@ -1,0 +1,483 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>🌙 Hidayah Cloud</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Amiri+Quran&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --bg: #f2f2f2;
+            --primary: #14104a;
+            --accent: #090455;
+            --text: #222;
+            --card-bg: #fff;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --vision-bg: #f9f9f9;
+            --vision-color: #2c3e50;
+            --font-serif: 'Amiri Quran', serif;
+            --font-sans: 'Cairo', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-sans);
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            padding: 1.5rem;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header,
+        section,
+        footer {
+            max-width: 960px;
+            width: 100%;
+            margin: auto;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+            user-select: none;
+        }
+
+        h2 {
+            color: var(--accent);
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+            user-select: none;
+        }
+
+        p.lead {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: #444;
+            margin: 0 auto 2rem;
+            max-width: 680px;
+            line-height: 1.5;
+        }
+
+        img.logo {
+            width: 180px;
+            border-radius: 50%;
+            margin: 1.5rem auto 2rem;
+            display: block;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+            user-select: none;
+        }
+
+        .quote {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.15rem;
+            margin: 1.5rem auto 2.5rem;
+            color: #333;
+            max-width: 700px;
+        }
+
+        #my-vision {
+            background: var(--vision-bg);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin: 3rem auto;
+            max-width: 820px;
+            text-align: left;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--vision-color);
+            box-shadow: var(--shadow);
+        }
+
+        #my-vision h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.2rem;
+            text-align: center;
+            user-select: none;
+        }
+
+        #my-vision p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-left: 6px solid var(--accent);
+            padding: 1.75rem 1.5rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-height: 340px;
+            user-select: none;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 0.7rem;
+            font-weight: 700;
+        }
+
+        .card p {
+            font-size: 1rem;
+            margin-bottom: 1.1rem;
+            flex-grow: 1;
+            line-height: 1.4;
+            color: #333;
+        }
+
+        .card a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+            align-self: flex-start;
+            margin-top: auto;
+            transition: color 0.2s ease;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+            color: #550099;
+        }
+
+        ul.features {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1rem;
+            text-align: left;
+            font-size: 1.05rem;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #444;
+        }
+
+        ul.features li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        ul.features li::before {
+            content: "☑️";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.1rem;
+            top: 0.15rem;
+            user-select: none;
+        }
+
+
+        footer {
+            font-size: 0.95rem;
+            color: #444;
+            margin-top: 4rem;
+            padding: 2rem 1rem;
+            border-top: 1px solid #ccc;
+            text-align: center;
+            background-color: #eef0ef;
+            user-select: none;
+        }
+
+        footer h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .card {
+                min-height: auto;
+                padding: 1.3rem 1rem;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            ul.features {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Hidayah Cloud</h1>
+        <img src="https://github.com/user-attachments/assets/1166cd61-b712-47da-a6f3-60fc8ed1f1b2"
+            alt="Hidayah Cloud Logo" class="logo" />
+        <p class="lead">
+            "وَالَّذِينَ جَاهَدُوا فِينَا لَنَهْدِيَنَّهُمْ سُبُلَنَا ٠ وَإِنَّ اللهَ لَمَعَ الْمُحْسِنِينَ"
+            <br /><br />
+            <em class="quote">And those who strive for Us – We will surely guide them to Our ways. And indeed, Allah is
+                with the
+                doers of good. [Al-Ankabut 29:69]</em>
+        </p>
+    </header>
+
+    <section id="my-vision">
+        <h2>🌟 My Vision</h2>
+        <p>
+            As a seeker of both knowledge and purpose, I believe that technology is not just a tool—it is a trust
+            (<em>Amanah</em>). My vision is to use my skills in software development and education to serve not only the
+            IT world but the greater good of the Ummah.
+        </p>
+        <p>
+            Rooted in the values of sincerity (<em>Ikhlas</em>) and striving (<em>Jihad</em>), I am committed to
+            developing projects that empower, enlighten, and bring people closer to the light of guidance.
+        </p>
+        <p>
+            This personal mission drives every line of code I write and every lesson I teach, hoping to contribute
+            positively to the digital Islamic community.
+        </p>
+    </section>
+
+    <section id="about">
+        <h2>About Hidayah Cloud</h2>
+        <p>
+            Hidayah Cloud is a passion project aimed at creating and sharing Islamic and technical software that bridges
+            faith and modern technology. Through open-source contributions, tutorials, and community engagement, we
+            hope to inspire others to use their talents for meaningful impact.
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>🚀 Featured Web Apps</h2>
+        <div class="projects">
+            <article class="card">
+                <h3>IslamicVision</h3>
+                <p>Comprehensive Islamic research hub.</p>
+                <ul class="features">
+                    <li> 135+ Quran Translations</li>
+                    <li> 20+ Famous Reciters</li>
+                    <li> Authentic Hadiths</li>
+                    <li>Audio Playback</li>
+                    <li> Multilingual Search</li>
+                    <li> Bookmark & Share</li>
+                    <li> Responsive Design</li>
+                </ul>
+                <a href="https://islamicvision.vercel.app/" target="_blank" rel="noopener">Visit Site →</a>
+            </article>
+
+            <article class="card">
+                <h3>MushafCloud</h3>
+                <p>Full digital Quran platform.</p>
+                <ul class="features">
+                    <li> 135+ Quran Translations</li>
+                    <li> 20+ Renowned Reciters</li>
+                    <li> Full Audio Playback</li>
+                    <li> Bookmark & Highlight</li>
+                    <li> Multilingual Support</li>
+                    <li> Modern UI</li>
+                    <li> Easy Navigation</li>
+                </ul>
+                <a href="https://mushafcloud.vercel.app/" target="_blank" rel="noopener">Visit Site →</a>
+            </article>
+
+            <article class="card">
+                <h3>SunnahVision</h3>
+                <p>Explore Hadiths and Sunnahs.</p>
+                <ul class="features">
+                    <li> Authentic Hadiths</li>
+                    <li>Advanced Search</li>
+                    <li> Daily Sunnah Alerts</li>
+                    <li> Bookmark & Share</li>
+                    <li> Multilingual</li>
+                    <li> Clean UI</li>
+                    <li> Fast Performance</li>
+                </ul>
+                <a href="https://unnahvision.vercel.app/" target="_blank" rel="noopener">Visit Site →</a>
+            </article>
+
+            <article class="card">
+                <h3>Quran-Afasy</h3>
+                <p>Flutter app with Al-Afasy recitation.</p>
+                <ul class="features">
+                    <li> Al-Afasy Recitation</li>
+                    <li> Ayah Sync & Repeat</li>
+                    <li> Bookmark Verses</li>
+                    <li> Playback Speed</li>
+                    <li> Smooth UI</li>
+                    <li> Dark Mode</li>
+                    <li> Lightweight</li>
+                </ul>
+                <a href="https://quran-affasy.vercel.app/" target="_blank" rel="noopener">Visit Site →</a>
+            </article>
+
+            <article class="card">
+                <h3>Mushaf-React</h3>
+                <p>Modern Quran reader in React.</p>
+                <ul class="features">
+                    <li> Surah & Ayah List</li>
+                    <li> Audio Playback</li>
+                    <li> Bookmark Verses</li>
+                    <li> Surah & Ayah Search</li>
+                    <li> Single Page App</li>
+                    <li> Responsive Design</li>
+                    <li> Multilingual</li>
+                </ul>
+                <a href="https://mushaf-react.vercel.app/" target="_blank" rel="noopener">Visit Site →</a>
+            </article>
+        </div>
+
+    </section>
+
+
+
+    <section>
+        <h2>🔍 Key Features</h2>
+        <ul class="features" style=" list-style: none; padding-left: 0; max-width: 700px; margin: auto;">
+            <li><strong>135+ Quran Translations & Tafsir in 40+ Languages</strong><br>
+                — Comprehensive access across platforms</li>
+            <li> <strong>20+ Renowned Reciters including Haramain Imams</strong><br>
+                — High-quality audio playback & downloads</li>
+            <li> <strong>Authentic Hadith Collections</strong><br>
+                — with Advanced Filtering and Search — Explore Sahih Bukhari, Muslim, and more</li>
+            <li> <strong>Seamless Audio Playback</strong><br>
+                — Full Surah & individual Ayah recitation with repeat & sync features</li>
+            <li> <strong>Bookmark, Highlight & Share Ayahs and Hadiths</strong><br>
+                — Personalize your study and share insights</li>
+            <li> <strong>Multilingual Search Engine</strong><br>
+                — Arabic, Urdu, English support for quick and relevant results</li>
+            <li> <strong>Modern, Responsive UI</strong><br>
+                — Flutter & React based apps ensuring smooth experience on all devices</li>
+            <li> <strong>Daily Sunnah & Hadith Notifications</strong><br> — Stay connected with prophetic guidance</li>
+            <li> <strong>Cross-platform Access</strong><br>
+                — Web and mobile apps built for easy access anywhere, anytime</li>
+            <li> <strong>User-friendly UI/UX</strong><br>
+                — combining modern design with Islamic aesthetics for an engaging experience</li>
+            <li> <strong>Cross-platform Compatibility</strong><br>
+                — Seamless operation on Web, Mobile, and Desktop platforms</li>
+            <li> <strong>Rich Interactive Content</strong><br>
+                — Extensive Quran, Hadith, and Islamic knowledge resources</li>
+            <li> <strong>Community-driven Development</strong><br>
+                — Open-source projects with collaborative feedback and improvement</li>
+        </ul>
+    </section>
+    <footer style="
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center; 
+    padding: 2.5rem 1.5rem; 
+    background-color: #f9fafb; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    color: #333;
+    box-shadow: inset 0 1px 8px rgb(0 31 84 / 0.1);
+    border-radius: 0;  /* Remove rounding for full width */
+">
+
+        <!-- Spiritual Signature (Top) -->
+        <p style="margin-bottom: 1.8rem; font-size: 1.2rem; color: #001F54;">
+            <strong style="font-family: 'Amiri Quran', serif; font-weight: 700;">وَمَا تَوْفِيقِي إِلَّا
+                بِاللَّهِ</strong><br />
+            <small style="display: block; margin-top: 0.2rem; color: #666; font-style: normal;">[Qur’an 11:88]</small>
+
+            <span style="font-size: 0.95rem; color: #555;">“My success is only by Allah.” </span>
+        </p>
+
+        <!-- Ayah Block -->
+        <div style="margin-bottom: 2rem; color: #222;">
+            <div
+                style="font-family: 'Amiri Quran', serif; font-size: 1.3rem; line-height: 2.1; color: #001F54; user-select: text;">
+                وَمَن يَتَّقِ ٱللَّهَ يَجْعَل لَّهُۥ مَخْرَجًۭا<br />
+                وَيَرْزُقْهُ مِنْ حَيْثُ لَا يَحْتَسِبُ ۚ وَمَن يَتَوَكَّلْ عَلَى ٱللَّهِ فَهُوَ حَسْبُهُۥ ۚ
+            </div>
+            <small style="display: block; margin-top: 0.6rem; color: #666; font-style: normal;">[Surah At-Talaq
+                65:2–3]</small>
+            <p style="font-size: 1rem; color: #444; max-width: 680px; margin: 0.8rem auto 0;">
+                “And whoever fears Allah – He will make for him a way out. And will provide for him from where he does
+                not expect. And whoever relies upon Allah – then He is sufficient for him.”
+            </p>
+        </div>
+
+        <!-- Social Links -->
+        <div style="margin-bottom: 2rem;">
+            <h4 style="margin-bottom: 0.8rem; color: #001F54; font-weight: 600;">🤝 Let's Stay Connected</h4>
+            <p style="margin: 0; font-size: 1rem; letter-spacing: 0.03em;">
+                <a href="https://linkedin.com/in/syedmuhammadarsalanshah" target="_blank" rel="noopener noreferrer"
+                    style="color: #001F54; text-decoration: none; transition: color 0.3s ease;">LinkedIn</a>
+                &nbsp;|&nbsp;
+                <a href="https://wa.me/923032006225" target="_blank" rel="noopener noreferrer"
+                    style="color: #001F54; text-decoration: none; transition: color 0.3s ease;">WhatsApp</a>
+                &nbsp;|&nbsp;
+                <a href="https://github.com/syedmuhammadarsalanshah" target="_blank" rel="noopener noreferrer"
+                    style="color: #001F54; text-decoration: none; transition: color 0.3s ease;">GitHub</a> &nbsp;|&nbsp;
+                <a href="mailto:smarsalanshah125@gmail.com"
+                    style="color: #001F54; text-decoration: none; transition: color 0.3s ease;">Email</a>
+            </p>
+        </div>
+
+        <!-- Copyright -->
+        <p style="font-size: 0.9rem; color: #666; margin-top: 0;">
+            © 2025 <strong>Hidayah Cloud</strong> — Thoughtfully crafted with sincerity and excellence by
+            <strong>
+                <a href="https://github.com/syedmuhammadarsalanshah" target="_blank" rel="noopener noreferrer"
+                    style="color: #001F54; text-decoration: none; transition: color 0.3s ease;">Syed M Arsalan Shah</a>
+            </strong>.
+        </p>
+
+        <style>
+            footer a:hover {
+                color: #004080;
+                text-decoration: underline;
+            }
+        </style>
+    </footer>
+
+
+</body>
+
+</html>
